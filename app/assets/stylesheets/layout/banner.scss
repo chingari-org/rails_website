@@ -1,0 +1,52 @@
+.banner.banner-fix {
+  // min-height: 30vh;
+  background-attachment: fixed;
+  
+  background-position: center 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .row{
+    .message {
+      padding: 15vw 50px 15vw 50px;
+    }
+  }
+}
+
+.banner {
+  // min-height: 30vh;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .row{
+    .message {
+      padding: 12vw 50px 12vw 50px;
+    }
+  }
+}
+
+.banner-md {
+  // min-height: 30vh;
+  background-attachment: scroll;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .row{
+    .message {
+      padding: 8vw 50px 8vw 50px;
+    }
+  }
+}
+
+.banner-sm {
+  // min-height: 30vh;
+  background-attachment: scroll;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .row{
+    .message {
+      padding: 4vw 50px 4vw 50px;
+    }
+  }
+}

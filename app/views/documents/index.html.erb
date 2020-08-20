@@ -1,0 +1,23 @@
+<% provide(:title, "Documents Test Page") %>
+<div>
+  Existing Documents:
+  <ul>
+    <% @documents.each do |doc| %>
+      <li>
+        <div>
+          <span><%= doc.title %> </span>
+          <% if doc.respond_to?(:file) %>
+            <a href="<%= doc.file.url %>" download> LINK </a>
+          <% end %>
+          <%= link_to "/documents/#{doc.id}", method: :delete, class:"btn btn-primary" do %>
+            delete
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <br>
+  <iframe src="/documents/new" height="1000">
+
+  </iframe>
+</div>

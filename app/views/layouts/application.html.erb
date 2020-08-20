@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Martel:300|Raleway:200|Source+Sans+Pro:200|Montserrat" rel="stylesheet"> 
+    <!-- Turbolink is loading in our stylesheets after the SASS imports are done -->
+    <%= stylesheet_link_tag 'application', media: 'all'%>
+    <!-- Turbolink is loading in our external JS dependencies -->
+    <%= javascript_include_tag 'application', "data-turbolinks-track": true %>
+  </head>
+
+  <body>
+  	<!-- Render header -->
+    <%= render 'layouts/header' %>
+    <div id="notifications"></div>
+    <!-- Render error messages for forms (if any) -->
+	  <div id="error-container">
+	    <div class="container">
+	      <% flash.each do |message_type, message| %>
+	          <div class="alert alert-dismissible alert-<%= message_type %>">
+	            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	            <%= message %>
+	          </div>
+	      <% end %>
+	    </div>
+	  </div>
+
+    <%= yield %>
+    <!-- Render footer -->
+    <%= render 'layouts/footer' %>
+    <!--Convenient message for checking our environment -->
+    <script> console.log("Rails is running in <%= Rails.env %> environment") </script>
+    <!-- Webpacker then loads our Vue app mounts as well as other initializers -->
+  </body>
+</html>

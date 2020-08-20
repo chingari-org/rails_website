@@ -1,0 +1,36 @@
+<% provide(:title, "Log in") %>
+<%= stylesheet_link_tag 'pages/login', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="banner-sm" style="background-image: url(<%= asset_path('backgrounds/anton-darius-thesollers-271293-unsplash.jpg') %>)">
+  <div class="row d-flex align-items-center">
+    <div class="message text-center d-lg-none col-sm-12">
+      <p class="light-text title serif clear-theme">Log In</p>
+    </div>
+    <div class="message text-center col-lg-6 col-sm-12">
+      <p class="light-text title sans-serif clear-theme">
+
+        <div class="shadow-box">
+          <%= form_for(:session, url: login_path) do |f| %>
+
+            <!-- <%= f.label :email, class: "input-label" %> -->
+            <%= f.email_field :email, class: "form-control input", placeholder: "Email" %>
+
+            <!-- <%= f.label :password, class: "input-label" %> -->
+            <%= f.password_field :password, class: "form-control input", placeholder: "Password"  %>
+
+            <%= f.submit "Log In", class: "btn button border clear-theme clear-hover" %>
+          <% end %>
+        </div>
+
+        <div class="shadow-box">
+          New user?
+          <%= link_to "/signup" do %>
+            <button class="button">Sign up now!</button>
+          <% end %>
+        </div>
+      </p>
+    </div>
+    <div class="message text-center d-sm-none d-lg-block col-lg-6">
+      <p class="light-text title serif clear-theme">Log In</p>
+    </div>
+  </div>
+</div>
