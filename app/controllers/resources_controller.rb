@@ -1,7 +1,7 @@
 class ResourcesController < ApplicationController
     before_action :authenticate_user!
     before_action :find_resource, only: [:edit,:update,:show, :destroy]
-    before_action :authorize!, except: [:index, :show]
+    before_action :authorize!, only: [:new, :create, :edit, :update, :destroy]
 
     def new
         @resource = Resource.new
@@ -30,8 +30,28 @@ class ResourcesController < ApplicationController
         end
     end
 
-    def index
-        @resources = Resource.all
+    def immigration
+        @resources = Resource.find_by(category: "immigration")
+    end
+
+    def legal_rights
+        @resources = Resource.find_by(category: "legal rights")
+    end
+
+    def womens_rights
+        @resources = Resource.find_by(category: "women's rights")
+    end
+
+    def personal_dev
+        @resources = Resource.find_by(category: "personal development")
+    end
+
+    def professional_dev
+        @resources = Resource.find_by(category: "professional development")
+    end
+
+    def community
+        @resources = Resource.find_by(category: "community")
     end
 
     def show
