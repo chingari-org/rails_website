@@ -8,7 +8,7 @@ class Ability
 
     alias_action :create, :read, :update, :destroy, to: :crud
 
-    if user.role == 10?
+    if user.role == 10
       can :manage, :all
     end
 
