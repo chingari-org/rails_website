@@ -49,7 +49,7 @@ class ResourcesController < ApplicationController
     end
     
     def resource_params
-        params.require(:product).permit(:title, :category, :content)
+        params.require(:product).permit(:title, :category, :body)
     end
 
     def authorize!
