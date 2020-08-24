@@ -1,0 +1,26 @@
+<%= form_with(model: @resource, local: true) do |form| %>
+    <div class="form-group">
+        <% if @resource.errors.present? %>
+        <%= @resource.errors.full_messages.join(', ') %>
+        <% end %>
+    </div>
+    <div class="form-group">
+        <%= form.label :title%><br>
+        <%= form.text_field :title %>
+    </div>
+    <div class="form-group">
+        <%= form.label :category %><br>
+        <%= form.select :category, 
+            ['Immigration', 'Legal Rights', 'Personal Development', 
+            'Professional Development', 'Community'],
+            :class => "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= form.label :body %><br>
+        <%= form.text_area :body, cols: 75, rows:10 %>
+    </div>
+
+    <br>
+    <%= form.submit "Save", :class => "btn btn-primary" %>
+
+<% end %>
