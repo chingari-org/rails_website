@@ -19,7 +19,6 @@ gem 'jquery-rails', '4.3.1'
 gem 'bootstrap', '4.0.0'
 gem "font-awesome-rails", '4.7.0.4'
 
-
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '5.0.1'
 # Use SCSS for stylesheets
@@ -34,7 +33,6 @@ gem 'babel-transpiler'
 gem 'webpacker'
 # Use foreman to streamline starting both the rails server and the webpack dev server
 gem 'foreman'
-
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '2.7.0'
@@ -51,12 +49,13 @@ gem 'omniauth-google-oauth2', '0.5.3'
 # For fb oauth
 gem 'omniauth-facebook', '4.0.0'
 
-
 # To upload files
 gem 'carrierwave', '1.2.2'
 # To store files using AWS
 gem 'fog-aws'
 
+# To manage authorization
+gem 'cancancan'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
