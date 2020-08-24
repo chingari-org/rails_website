@@ -5,14 +5,20 @@ class ApplicationController < ActionController::Base
   include SearchHelper
 
   private 
-  	# Returns true if current member is the user associated 
-  	# with the current page
+  	# Returns true if current member is the user associated with the current page
   	def correct_member?
   		@user = User.find(params[:id])
   		if @user != current_user
   			redirect_to root_url 
   			flash[:danger] = "You don't have permission to access this page."
   		end
-  	end
+	  end
+	  
+	  def authenticate_user!
+        unless logged_in?
+            flash[:danger] = "You must sign in or sign up to proceed."
+            redirect_to login_path
+        end
+    end
 
 end
