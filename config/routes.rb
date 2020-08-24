@@ -132,6 +132,8 @@ Rails.application.routes.draw do
     get "/authorize/:user_id", to: "users#authorize"
   end
 
+  resources :resources
+
   # Catch-all route
   get '*path', to: 'static_pages#coming_soon'
 end
