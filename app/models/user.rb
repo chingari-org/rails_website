@@ -10,7 +10,8 @@ class User < ApplicationRecord
 	has_secure_password
 
   	has_many :enrollments, dependent: :destroy
-  	has_many :courses, through: :enrollments
+	has_many :courses, through: :enrollments
+	has_many :resources, dependent: :destroy
 
 	# Returns the hash digest of the given string.
 	def User.digest(string)
